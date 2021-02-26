@@ -1,0 +1,30 @@
+{
+    "platforms": {
+	"darwin": {
+	    "aspects": [
+		"meta"
+	    ],
+	    "variables": { }
+	},
+	"linux": {
+	    "aspects": [
+		"meta",
+		"dotfiles"
+	    ],
+	    "variables": { }
+	}
+    },
+    "profiles": {
+	"personal": {
+	    "pattern": "/\\bdutchcaffeine\\b/i",
+	    "variables": { }
+	},
+	"work": {
+	    "pattern": "/\\bmcbg\\b/i",
+	    "variables": {}
+	}
+    },
+    "variables": {
+	"figManaged": "vim: set nomodifiable : NO EDITTING! - Edit the template source instead"
+    }
+}

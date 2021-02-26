@@ -1,0 +1,23 @@
+# <%= variables.figManaged %>
+
+<%- if (variables.gitHubUsername) { -%>
+
+[github]
+	username = <%= variables.gitHubUsername %>
+<%- } -%>
+
+[sendemail]
+	smtpEncryption = tls
+	smtpServer = smtp.gmail.com
+	smtpServerPort = 587
+<%- if (variables.gitUserEmail) { -%>
+	smtpUser = <%= variables.gitUserEmail %>
+<%- } -%>
+
+[user]
+<%- if (variables.gitUserEmail) { -%>
+	email = <%= variables.gitUserEmail %>
+<%- } -%>
+<%- if (variables.gitUserName) { -%>
+	name = <%= variables.gitUserName %>
+<%- } -%>

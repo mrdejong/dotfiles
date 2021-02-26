@@ -1,0 +1,20 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "A collection of dotfiles, based on wincent's dotfiles.",
+  "main": "/dev/null",
+    "scripts": {
+        "ci": "yarn format:check",
+        "format:check": "npx prettier --check \"**/*.{js,json,md,ts}\" \"*.{md,ts}\" aspects/dotfiles/files/.zsh/liferay/bin/portool",
+        "format": "npx prettier --write \"**/*.{js,json,md,ts}\" \"*.{md,ts}\" aspects/dotfiles/files/.zsh/liferay/bin/portool"
+    },
+  "author": "",
+  "license": "ISC",
+    "type": "module",
+  "dependencies": {
+    "typescript": "3.9.3"
+  },
+    "devDependencies": {
+	"@types/node": "*"
+    }
+}

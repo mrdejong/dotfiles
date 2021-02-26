@@ -1,0 +1,37 @@
+#!/bin/bash
+
+set -e
+
+REPO_ROOT="${BASH_SOURCE%/*}"
+
+cd "$REPO_ROOT"
+
+source bin/common
+
+log_info "installing typescript"
+
+yarn --frozen-lockfile --no-default-rc --no-progress --silent
+
+log_info "Generating TypeScript types"
+
+node support/typegen
+
+log_info "Compiling TypeScript source to JavaScript"
+
+./node_modules/.bin/tsc
+
+ln -fns ../lib/fig node_modules/fig
+cat > lib/fig/package.json <<HERE
+{
+    "name": "fig",
+    "description": "An absurd configuration framework",
+    "version": "0.0.1",
+    "main": "index.js",
+    "private": true,
+    "type": "module"
+}
+HERE
+
+log_info "Running main"
+
+node lib/fig/main.js "$@"

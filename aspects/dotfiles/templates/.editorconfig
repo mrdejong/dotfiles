@@ -1,0 +1,18 @@
+# <%= variables.figManaged %>
+
+root = true
+
+[<%= variables.home %>/projects/**]
+insert_final_newline = false
+ident_size = 4
+ident_style = spaces
+
+[<%= variables.home %>/projects/**/*.{js,scss}]
+insert_final_newline = true
+ident_size = 4
+ident_style = spaces
+
+[<%= variables.home %>/projects/**/package.json]
+insert_final_newline = true
+ident_size = 4
+ident_style = spaces

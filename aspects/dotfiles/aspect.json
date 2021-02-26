@@ -1,0 +1,11 @@
+{
+    "description": "Creates symlinks in $HOME to the dotfiles in this repo",
+    "variables": {
+	"files": [
+	    ".zshrc"
+	],
+	"templates": [
+	    ".gitconfig.erb"
+	]
+    }
+}
