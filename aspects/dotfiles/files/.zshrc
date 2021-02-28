@@ -63,9 +63,11 @@ function () {
   if [ -n "$TMUXING" -a -n "$TMUX" ]; then
     # In a a tmux session created in a non-root or root shell.
     local LVL=$(($SHLVL - 1))
+  elif [ -n "$EMACS" ]; then
+    local LVL=$(($SHLVL - 1))
   elif [ -n "$XAUTHORITY" ]; then
     # Probably in X on Linux.
-    local LVL=$(($SHLVL - 2))
+    local LVL=$(($SHLVL - 0))
   else
     # Either in a root shell created inside a non-root tmux session,
     # or not in a tmux session.
@@ -91,3 +93,40 @@ export SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
+
+#
+# Bindings
+#
+bindkey -e
+
+function fg-bg() {
+  if [[ $#BUFFER -eq 0 ]]; then
+    fg
+  else
+    zle push-input
+  fi
+}
+zle -N fg-bg
+bindkey '^Z' fg-bg
+
+#
+# Sourcing
+#
+
+source $HOME/.zsh/aliases
+
+
+#
+# Theme
+#
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+  [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+    eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias vim='nvim'
+
+. $HOME/.asdf/asdf.sh
+source $HOME/.cargo/env
