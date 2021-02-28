@@ -1,0 +1,6 @@
+alias ....='cd ../..'
+alias vim=nvim
+alias vi=nvim
+alias edit=nvim
+alias code=nvim
+alias ls=exa
