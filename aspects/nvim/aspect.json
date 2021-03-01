@@ -1,0 +1,8 @@
+{
+    "description": "NeoVim configuration",
+    "variables": {
+        "files": [
+            ".config/nvim"
+        ]
+    }
+}

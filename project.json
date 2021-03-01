@@ -3,14 +3,16 @@
         "darwin": {
             "aspects": [
                 "meta",
-                "dotfiles"
+                "dotfiles",
+                "nvim"
             ],
             "variables": { }
         },
         "linux": {
             "aspects": [
                 "meta",
-                "dotfiles"
+                "dotfiles",
+                "nvim"
             ],
             "variables": { }
         }

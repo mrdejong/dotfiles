@@ -1,3 +1,51 @@
 [submodule "aspects/dotfiles/files/.zsh/base16-shell"]
 	path = aspects/dotfiles/files/.zsh/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/base16-vim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/base16-vim
+	url = https://github.com/chriskempson/base16-vim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/coc.nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-fish"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-fish
+	url = https://github.com/dag/vim-fish
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-airline"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/base16-vim-airline-themes"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/base16-vim-airline-themes
+	url = https://github.com/dawikur/base16-vim-airline-themes.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-commentary"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vimagit"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vimagit
+	url = https://github.com/jreybert/vimagit
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-gitgutter"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/tagbar"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/rust.vim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-graphql"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-graphql
+	url = https://github.com/jparise/vim-graphql.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-tmux-navigator"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-tmux-runner"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-tmux-runner
+	url = https://github.com/christoomey/vim-tmux-runner
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-test"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-test
+	url = https://github.com/vim-test/vim-test.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/fzf.vim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/fzf"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/fzf
+	url = https://github.com/junegunn/fzf.git

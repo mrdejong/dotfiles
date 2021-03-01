@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/alexander/.config/picom'
+let g:netrw_dirhist_4='/home/alexander/.config/nvim'
+let g:netrw_dirhist_3='/home/alexander/.config/nvim/after/plugin'
+let g:netrw_dirhist_2='/home/alexander/.config/nvim/after'
+let g:netrw_dirhist_1='/home/alexander/.config/nvim'
