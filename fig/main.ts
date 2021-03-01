@@ -413,9 +413,9 @@ async function loadAspect(aspect: Aspect): Promise<void> {
         /* case 'terminfo': */
         /*     await import('../aspects/terminfo/index.js'); */
         /*     break; */
-        /* case 'vim': */
-        /*     await import('../aspects/vim/index.js'); */
-        /*     break; */
+        case 'nvim':
+            await import('../aspects/nvim/index.js');
+            break;
         default:
             const unreachable: never = aspect;
             throw new Error(`Unreachable ${unreachable}`);
