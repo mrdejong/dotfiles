@@ -2,6 +2,10 @@
     "description": "Creates symlinks in $HOME to the dotfiles in this repo",
     "variables": {
         "files": [
+            ".config/alacritty",
+            ".config/picom",
+            ".doom.d",
+            ".Xmodmap",
             ".zsh",
             ".zshenv",
             ".zshrc"

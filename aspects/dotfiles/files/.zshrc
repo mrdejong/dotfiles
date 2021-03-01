@@ -3,6 +3,32 @@ typeset -A __DC
 __DC[ITALIC_ON]=$'\e[3m'
 __DC[ITALIC_OFF]=$'\e[23m'
 
+autoload -U compinit
+compinit -u
+
+# Make completion:
+# - Try exact (case-sensitive) match first.
+# - Then fall back to case-insensitive.
+# - Accept abbreviations after . or _ or - (ie. f.b -> foo.bar).
+# - Substring complete (ie. bar -> foobar).
+zstyle ':completion:*' matcher-list '' '+m:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}' '+m:{_-}={-_}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Allow completion of ..<Tab> to ../ and beyond.
+zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(..) ]] && reply=(..)'
+
+# $CDPATH is overpowered (can allow us to jump to 100s of directories) so tends
+# to dominate completion; exclude path-directories from the tag-order so that
+# they will only be used as a fallback if no completions are found.
+zstyle ':completion:*:complete:(cd|pushd):*' tag-order 'local-directories named-directories'
+
+# Categorize completion suggestions with headings:
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format %F{default}%B%{$__DC[ITALIC_ON]%}--- %d ---%{$__DC[ITALIC_OFF]%}%b%f
+
+# Enable keyboard navigation of completions in menu
+# (not just tab/shift-tab but cursor keys as well):
+zstyle ':completion:*' menu select
+
 # Prompt
 
 autoload -U colors
@@ -93,6 +119,33 @@ export SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
+
+#
+# Options
+#
+setopt AUTO_CD                 # [default] .. is shortcut for cd .. (etc)
+setopt AUTO_PARAM_SLASH        # tab completing directory appends a slash
+setopt AUTO_PUSHD              # [default] cd automatically pushes old dir onto dir stack
+setopt AUTO_RESUME             # allow simple commands to resume backgrounded jobs
+setopt CLOBBER                 # allow clobbering with >, no need to use >!
+setopt CORRECT                 # [default] command auto-correction
+setopt CORRECT_ALL             # [default] argument auto-correction
+setopt NO_FLOW_CONTROL         # disable start (C-s) and stop (C-q) characters
+setopt NO_HIST_IGNORE_ALL_DUPS # don't filter non-contiguous duplicates from history
+setopt HIST_FIND_NO_DUPS       # don't show dupes when searching
+setopt HIST_IGNORE_DUPS        # do filter contiguous duplicates from history
+setopt HIST_IGNORE_SPACE       # [default] don't record commands starting with a space
+setopt HIST_VERIFY             # confirm history expansion (!$, !!, !foo)
+setopt IGNORE_EOF              # [default] prevent accidental C-d from exiting shell
+setopt INTERACTIVE_COMMENTS    # [default] allow comments, even in interactive shells
+setopt LIST_PACKED             # make completion lists more densely packed
+setopt MENU_COMPLETE           # auto-insert first possible ambiguous completion
+setopt NO_NOMATCH              # [default] unmatched patterns are left unchanged
+setopt PRINT_EXIT_VALUE        # [default] for non-zero exit status
+setopt PUSHD_IGNORE_DUPS       # don't push multiple copies of same dir onto stack
+setopt PUSHD_SILENT            # [default] don't print dir stack after pushing/popping
+setopt SHARE_HISTORY           # share history across shells
+
 
 #
 # Bindings
