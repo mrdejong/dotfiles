@@ -7,6 +7,16 @@ insert_final_newline = false
 ident_size = 4
 ident_style = spaces
 
+[<%= variables.home %>/projects/**/*.{c,h}]
+insert_final_newline = false
+ident_size = 2
+ident_style = tabs
+
+[<%= variables.home %>/projects/**/*.{rb,el}]
+insert_final_newline = false
+ident_size = 2
+ident_style = spaces
+
 [<%= variables.home %>/projects/**/*.{js,scss}]
 insert_final_newline = true
 ident_size = 4
