@@ -23,14 +23,14 @@ task('move originals to ~/.backups', async () => {
     }
 });
 
-task('link ~/.config/nvim to ~aspect/nvim/files/.nvim', async () => {
+task('Link files', async () => {
     const files = variable.paths('files');
 
     for (const src of files) {
         await file({
             force: true,
-            path: path.home.join(src.basename),
-            src: path.aspect.join('files', src.basename),
+            path: path.home.join(src),
+            src: path.aspect.join('files', src),
             state: "link"
         });
     }
