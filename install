@@ -32,6 +32,11 @@ cat > lib/fig/package.json <<HERE
 }
 HERE
 
+log_info "Updating submodules"
+
+git submodule init
+git submodule update
+
 log_info "Running main"
 
 node lib/fig/main.js "$@"
