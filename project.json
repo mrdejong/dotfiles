@@ -12,7 +12,8 @@
             "aspects": [
                 "meta",
                 "dotfiles",
-                "nvim"
+                "nvim",
+                "suckless"
             ],
             "variables": { }
         }

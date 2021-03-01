@@ -1,0 +1,13 @@
+{
+    "description": "Suckless window manaer and other applications",
+    "variables": {
+        "files": [
+            ".suckless/dwm",
+            ".suckless/dwmblocks",
+            ".suckless/dmenu",
+            ".suckless/slock",
+            ".suckless/st",
+            ".suckless/autostart.sh"
+        ]
+    }
+}
