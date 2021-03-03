@@ -7,9 +7,13 @@ static const char *fonts[] = {
 	"monospace:size=10"
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
+
+static const char col_white[]       = "#ffffff";
+static const char col_gray5[]       = "#3b3b3b";
+
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#bbbbbb", "#222222" },
+	[SchemeNorm] = { col_gray5, col_white },
 	[SchemeSel] = { "#eeeeee", "#005577" },
 	[SchemeOut] = { "#000000", "#00ffff" },
 };
