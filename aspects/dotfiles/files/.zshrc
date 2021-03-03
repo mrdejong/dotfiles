@@ -183,3 +183,4 @@ alias vim='nvim'
 
 . $HOME/.asdf/asdf.sh
 source $HOME/.cargo/env
+export PATH="~/.composer/vendor/bin:$PATH"
