@@ -25,7 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-nord-light)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -70,6 +70,13 @@
 (key-seq-define evil-insert-state-map "j;" 'move-end-line-semi)
 
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+
+(after! company
+  (setq company-idle-delay 0
+        company-minimum-prefix-length 1)
+  (setq company-show-numbers t)
+  (add-hook 'evil-normal-state-entry-hook #'company-abort))
+
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
