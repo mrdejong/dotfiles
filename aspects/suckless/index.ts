@@ -10,6 +10,7 @@ import {
 
 task('make directories', async () => {
     await file({path: '~/.suckless', state: 'directory'});
+    await file({path: '~/.config', state: 'directory'});
 });
 
 task('move originals to ~/.backups', async () => {
