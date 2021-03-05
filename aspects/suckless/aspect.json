@@ -2,6 +2,7 @@
     "description": "Suckless window manaer and other applications",
     "variables": {
         "files": [
+            ".config/rofi",
             ".suckless/dwm",
             ".suckless/dwmblocks",
             ".suckless/dmenu",
