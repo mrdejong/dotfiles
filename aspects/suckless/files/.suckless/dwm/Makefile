@@ -20,10 +20,12 @@ options:
 ${OBJ}: config.h config.mk
 
 config.h:
+	rm -f $@
 	cp config.def.h $@
 
 dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
+	rm -f config.h
 
 clean:
 	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
