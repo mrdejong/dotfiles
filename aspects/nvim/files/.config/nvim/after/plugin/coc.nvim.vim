@@ -9,7 +9,9 @@ let g:coc_global_extensions = [
       \ 'coc-todolist',
       \ 'coc-toml',
       \ 'coc-graphql',
-      \ 'coc-phpactor'
+      \ 'coc-phpactor',
+      \ 'coc-phpls',
+      \ 'coc-flutter-tools'
       \ ]
 
 inoremap <silent><expr> <TAB>

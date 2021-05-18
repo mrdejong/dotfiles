@@ -3,6 +3,9 @@ typeset -A __DC
 __DC[ITALIC_ON]=$'\e[3m'
 __DC[ITALIC_OFF]=$'\e[23m'
 
+. $HOME/.asdf/asdf.sh
+
+fpath=(${ASDF_DIR}/completions $fpath)
 autoload -U compinit
 compinit -u
 
@@ -181,6 +184,5 @@ BASE16_SHELL="$HOME/.zsh/base16-shell/"
 
 alias vim='nvim'
 
-. $HOME/.asdf/asdf.sh
-source $HOME/.cargo/env
+# source $HOME/.cargo/env
 export PATH="~/.composer/vendor/bin:$PATH"

@@ -49,3 +49,9 @@
 [submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/fzf"]
 	path = aspects/nvim/files/.config/nvim/pack/bundle/start/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/dart-vim-plugin"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/dart-vim-plugin
+	url = https://github.com/dart-lang/dart-vim-plugin.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/editorconfig-vim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git

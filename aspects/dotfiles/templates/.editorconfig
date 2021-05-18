@@ -17,7 +17,7 @@ insert_final_newline = false
 ident_size = 2
 ident_style = spaces
 
-[<%= variables.home %>/projects/**/*.{js,scss}]
+[<%= variables.home %>/projects/**/*.{js,scss,php}]
 insert_final_newline = true
 ident_size = 4
 ident_style = spaces
