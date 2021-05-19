@@ -4,11 +4,39 @@ import {
     command,
     file,
     path,
+    prompt,
     resource,
-    // skip,
+    skip,
     task,
-    variable
+    variable,
+    fail,
+    log
 } from 'fig';
+
+task('check encrypted files', async () => {
+  if (variable('identity') === 'alexander') {
+    const result = await command(
+      'vendor/git-cipher/bin/git-cipher',
+      ['status'],
+      {
+        failedWhen: () => false,
+      }
+    );
+
+    if (result !== null) {
+      if (result.status !== 0) {
+        log.warn(`git-cipher status:\n\n${result.stdout}\n`);
+
+        if (!(await prompt.confirm('Continue anyway'))) {
+          fail(`decrypted file check failed`);
+        }
+      }
+    }
+    else {
+      skip();
+    }
+  }
+});
 
 task('make direcotries', async () => {
     await file({path: '~/.backups', state: 'directory'});
