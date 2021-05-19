@@ -6,6 +6,8 @@
             ".config/picom",
             ".doom.d",
             ".Xmodmap",
+            ".tmux",
+            ".tmux.conf",
             ".zsh",
             ".zshenv",
             ".zshrc"
