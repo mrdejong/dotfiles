@@ -61,3 +61,9 @@
 [submodule "vendor/git-cipher"]
 	path = vendor/git-cipher
 	url = https://github.com/wincent/git-cipher.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-crystal"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-crystal
+	url = https://github.com/rhysd/vim-crystal
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-slang"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-slang
+	url = https://github.com/elorest/vim-slang

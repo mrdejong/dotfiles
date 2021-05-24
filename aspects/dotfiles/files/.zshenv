@@ -10,3 +10,4 @@ if [ -d "$HOME/.zshenv.d" ]; then
         source "$EXTENSION_FILE"
     done
 fi
+. "$HOME/.cargo/env"
