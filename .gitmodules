@@ -67,3 +67,6 @@
 [submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-slang"]
 	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-slang
 	url = https://github.com/elorest/vim-slang
+[submodule "aspects/dotfiles/files/.tmux/plugins/tmux-yank"]
+	path = aspects/dotfiles/files/.tmux/plugins/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank.git
