@@ -13,7 +13,8 @@
                 "meta",
                 "dotfiles",
                 "nvim",
-                "suckless"
+                "suckless",
+                "awesomewm"
             ],
             "variables": { }
         }

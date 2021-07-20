@@ -1,0 +1,8 @@
+{
+    "description": "Install & Configure awesomeWM",
+    "variables": {
+        "files": [
+            ".config/awesome"
+        ]
+    }
+}
