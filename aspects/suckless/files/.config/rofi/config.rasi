@@ -1,3 +1,6 @@
 configuration {
-	theme: "~/.config/rofi/themes/rofi-center.rasi";
+	theme: "~/.config/rofi/themes/Quiet.rasi";
+	show-icons: true;
+	terminal: "/usr/bin/alacritty";
+	modi: "window,drun,run,keys,file-browser";
 }
