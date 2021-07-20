@@ -3,7 +3,7 @@ typeset -A __DC
 __DC[ITALIC_ON]=$'\e[3m'
 __DC[ITALIC_OFF]=$'\e[23m'
 
-. $HOME/.asdf/asdf.sh
+#. $HOME/.asdf/asdf.sh
 
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -U compinit
@@ -105,6 +105,7 @@ function () {
     # or not in a tmux session.
     local LVL=$SHLVL
   fi
+  LVL=$(($SHLVL - 1))
   local SUFFIX='%(!.%F{yellow}%n%f.)%(!.%F{yellow}.%F{red})'$(printf '\u276f%.0s' {1..$LVL})'%f'
 
   export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%B%1~%b%F{yellow}%B%(1j.*.)%(?..!)%b%f %B${SUFFIX}%b "
@@ -187,5 +188,6 @@ BASE16_SHELL="$HOME/.zsh/base16-shell/"
 
 alias vim='nvim'
 
-# source $HOME/.cargo/env
+source $HOME/.cargo/env
 export PATH="~/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.symfony/bin:$PATH"
