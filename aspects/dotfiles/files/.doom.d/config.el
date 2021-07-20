@@ -9,6 +9,9 @@
 (setq user-full-name "Alexander de Jong"
       user-mail-address "mrdejong89@gmail.com")
 
+(setq doom-leader-key "SPC"
+      doom-localleader-key ",")
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -35,7 +38,20 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
 
-(setenv "EMACS" "1")
+(after! lsp-mode
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-tramp-connection '("intelephens" "--stdio"))
+                    :major-modes '(php-mode)
+                    :remote? t
+                    :priority -1
+                    :notification-handlers (ht ("indexingStarted" #'ignore)
+                                               ("indexingEnded" #'ignore))
+                    :initialization-options (lambda ()
+                                              (list :storagePath lsp-intelephense-storage-path
+                                                    :licenceKey lsp-intelephense-licence-key
+                                                    :clearCache lsp-intelephense-clear-cache))
+                    :completion-in-comments? t
+                    :server-id 'iph-remote)))
 
 (defun save-exit ()
   (interactive)
@@ -58,6 +74,11 @@
   (execute-kbd-macro (read-kbd-macro "$a;"))
   (evil-normal-state))
 
+(defun paste ()
+  (interactive)
+  (evil-normal-state)
+  (execute-kbd-macro (read-kbd-macro "pa")))
+
 (require 'key-chord)
 (require 'key-seq)
 
@@ -68,14 +89,75 @@
 (key-seq-define evil-insert-state-map "jl" 'move-one-char)
 (key-seq-define evil-insert-state-map "js" 'move-end-line)
 (key-seq-define evil-insert-state-map "j;" 'move-end-line-semi)
+(key-seq-define evil-insert-state-map "jp" 'paste)
 
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 
 (after! company
-  (setq company-idle-delay 0
-        company-minimum-prefix-length 1)
+  (setq company-idle-delay 0.0
+        company-minimum-prefix-length 2)
   (setq company-show-numbers t)
   (add-hook 'evil-normal-state-entry-hook #'company-abort))
+
+;; exwm config
+;; (require 'exwm)
+;; (require 'exwm-config)
+;; (exwm-config-default)
+;; (require 'exwm-randr)
+
+;; (add-hook 'exwm-randr-screen-change-hook
+;;           (lambda ()
+;;             (start-process-shell-command
+;;              "xrandr" nil "xrandr --output HDMI-1 --primary --right-of eDP-1")))
+
+;; (defun open-program (name command)
+;;   "Open the program in a buffer called name via the command"
+;;   (start-process-shell-command name nil command))
+
+;; (defun open-brave ()
+;;   "Open the brave browser"
+;;   (program-prompt "Browser" "brave"))
+
+;; (defun program-prompt (command)
+;;   (interactive (list (read-shell-command "$ ")))
+;;   (open-program command command))
+
+;; (defun dc/exwm-update-class ()
+;;   (exwm-workspace-rename-buffer exwm-class-name))
+
+;; (setq exwm-input-prefix-keys
+;;       '(?\C-x
+;;         ?\C-u
+;;         ?\C-h
+;;         ?\M-x
+;;         ?\M-`
+;;         ?\M-&
+;;         ?\M-:
+;;         ?\C-\M-j))
+
+;; (setq exwm-workspace-number 10
+;;       exwm-randr-workspace-output-plist '(0 "HDMI-1"
+;;                                           1 "eDP-1")
+;;       exwm-input-prefix-keys '(?\M-x
+;;                                ?\M-:)
+;;       exwm-input-global-keys '(([?\s-p] . program-prompt)
+;;                                ([?\s-v] . evil-window-vsplit)
+;;                                ([?\s-z] . evil-window-split)
+;;                                ([?\s-k] . evil-window-next)
+;;                                ([?\s-j] . evil-window-prev)
+;;                                ([?\s-S-j] . evil-window-decrease-width)
+;;                                ([?\s-w] . exwm-workspace-switch)
+;;                                ([?\s-c] . exwm-workspace-swap)
+;;                                ([?\s-m] . exwm-workspace-move)
+;;                                ([?\s-r] . exwm-reset)))
+
+
+;; (exwm-randr-enable)
+
+;; (require 'exwm-systemtray)
+;; (exwm-systemtray-enable)
+
+;; (exwm-enable)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
