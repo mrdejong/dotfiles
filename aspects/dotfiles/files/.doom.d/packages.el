@@ -51,3 +51,6 @@
 
 (package! key-chord)
 (package! key-seq)
+
+;; EXWM
+(package! exwm)
