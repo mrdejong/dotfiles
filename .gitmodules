@@ -79,3 +79,6 @@
 [submodule "aspects/awesomewm/files/.config/awesome/bling"]
 	path = aspects/awesomewm/files/.config/awesome/bling
 	url = https://github.com/BlingCorp/bling.git
+[submodule "aspects/awesomewm/files/.config/awesome/lain"]
+	path = aspects/awesomewm/files/.config/awesome/lain
+	url = https://github.com/lcpz/lain.git
