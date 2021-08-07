@@ -76,3 +76,6 @@
 [submodule "aspects/dotfiles/files/.tmux/plugins/tmux-yank"]
 	path = aspects/dotfiles/files/.tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "aspects/awesomewm/files/.config/awesome/bling"]
+	path = aspects/awesomewm/files/.config/awesome/bling
+	url = https://github.com/BlingCorp/bling.git
