@@ -89,7 +89,7 @@ theme.si_cpu_graph_bg       = theme.colors.darkGrey .. '00'
 theme.si_temp_font          = font('14', 'Bold')
 
 -- Bar
-theme.wibar_border_width = 2
+theme.wibar_border_width = 0
 theme.wibar_border_color = theme.new_colors.base8
 theme.taglist_squares_sel = nil
 theme.taglist_squares_unsel = nil
@@ -106,7 +106,7 @@ theme.bg_systray = theme.new_colors.bg
 
 -- Foregrounds
 
-theme.fg_normal = theme.new_colors.fg
+theme.fg_normal = theme.new_colors.bg
 theme.fg_focus = theme.colors.teal
 theme.fg_urgent = "#D5D5D5"
 theme.fg_minimize = "#C780FF"
@@ -121,13 +121,13 @@ theme.border_color_active = "#384149"
 theme.border_color_marked = "#384149"
 
 -- Taglist
-theme.taglist_bg = theme.bg_normal
-theme.taglist_bg_empty = theme.bg_normal
-theme.taglist_bg_occupied = theme.bg_normal
+theme.taglist_bg = "#00000000"
+theme.taglist_bg_empty = "#00000000"
+theme.taglist_bg_occupied = "#00000000"
 
-theme.taglist_fg = theme.fg_normal
-theme.taglist_fg_empty = theme.fg_normal
-theme.taglist_fg_occupied = theme.colors.darkblue
+theme.taglist_fg = "#ECEFF4"
+theme.taglist_fg_empty = "#ECEFF4"
+theme.taglist_fg_occupied = "#ECEFF4"
 
 -- Tasklist
 

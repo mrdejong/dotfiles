@@ -1,63 +1,78 @@
--- Importing libraries
-local awful = require("awful")
-require("awful.autofocus")
-local beautiful = require("beautiful")
-
-local naughty = require("naughty")
-
-local gfs = require("gears.filesystem")
+require('awful.autofocus')
+local gears     = require('gears')
+local awful     = require('awful')
+local naughty   = require('naughty')
+local dpi       = require('beautiful').xresources.apply_dpi
+local beautiful = require('beautiful')
 
 local function dbug(msg)
     naughty.notify({ preset = naughty.config.presets.critical,
                      title = "Debug",
-                     message = "Hello world"
+                     message = msg
     })
 end
 
-local theme_path = string.format('%s/.config/awesome/themes/%s/theme.lua', os.getenv('HOME'), 'quiet')
-beautiful.init(theme_path)
+require('module.notifications')
 
-if awesome.startup_errors then
-    naughty.notify({ preset = naughty.config.presets.critical,
-                     title = "Oops, there were errors during startup!",
-                     message = awesome.startup_errors })
+beautiful.init(require('theme'))
+
+require('layout')
+
+require('configuration.client')
+require('configuration.tags')
+_G.root.keys(require('configuration.keys.global'))
+
+local function manage_client(c)
+    if not _G.awesome.startup then
+        awful.client.setslave(c)
+    end
+
+    if _G.awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
+        awful.placement.no_offscreen(c)
+    end
 end
 
--- Handle runtime errors after startup
-do
-    local in_error = false
-    awesome.connect_signal("debug::error", function (err)
-        -- Make sure we don't go into an endless error loop
-        if in_error then return end
-        in_error = true
+_G.client.connect_signal('manage', manage_client)
 
-        naughty.notify({ preset = naughty.config.presets.critical,
-                         title = "Oops, an error happened!",
-                         message = tostring(err) })
-        in_error = false
-    end)
+-- Move cursor to focused window
+function Move_mouse_onto_focused_client()
+    local c = _G.client.focus
+    gears.timer({
+        timeout = 0.1,
+        autostart = true,
+        single_shot = true,
+        callback = function()
+            if _G.mouse.object_under_pointer() ~= c then
+                local geometry = c:geometry()
+                local x = geometry.x + geometry.width / 2
+                local y = geometry.y + geometry.height / 2
+                _G.mouse.coords({
+                    x = x,
+                    y = y
+                }, true)
+            end
+        end
+    })
 end
 
+if beautiful.cursor_warp then
+    _G.client.connect_signal("focus", Move_mouse_onto_focused_client)
+    _G.client.connect_signal("swapped", Move_mouse_onto_focused_client)
+end
 
-require('keybindings')
+-- Enable sloppy focus, so that focus follows mouse.
+_G.client.connect_signal('mouse::enter', function(c)
+    c:emit_signal('request::activate', 'mouse_enter', {
+        raise = true
+    })
+end)
 
-require("bar")
-
-require("ui")
-
-require("extras")
-
--- require("corners")
-
-local bling = require('bling')
-
-local machi = require("layout-machi")
-
-local revelation = require("awesome-revelation")
-revelation.init()
-
-terminal = "alacritty"
-editor = os.getenv("EDITOR") or "nvim"
-editor_cmd = terminal .. " -e " .. editor
+-- Make the focused window have a glowing border
+_G.client.connect_signal('focus', function(c)
+    c.border_color = beautiful.border_focus
+end)
+_G.client.connect_signal('unfocus', function(c)
+    c.border_color = beautiful.border_normal
+end)
 
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")

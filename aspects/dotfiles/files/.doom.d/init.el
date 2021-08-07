@@ -21,9 +21,9 @@
 
        :completion
        company             ; the ultimate code completion backend
-       ;; helm                ; the *other* search engine for love and life
-       ido                 ; the other *other* search engine...
-       ivy                 ; a search engine for love and life
+       helm                ; the *other* search engine for love and life
+       ;; ido                 ; the other *other* search engine...
+       ;; ivy                 ; a search engine for love and life
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -84,7 +84,7 @@
        ;;grammar           ; tasing grammar mistake every you make
 
        :tools
-       ;;ansible
+       ansible
        ;;debugger          ; FIXME stepping through code, to help you add bugs
        direnv
        docker
@@ -172,7 +172,8 @@
        sh                  ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
-       ;;swift             ; who asked for emoji variables?
+       (swift             ; who asked for emoji variables?
+        +lsp)
        ;;terra             ; Earth and Moon in alignment for performance.
        web                 ; the tubes
        yaml                ; JSON, but readable

@@ -26,14 +26,14 @@ local old_f_rel = awful.screen.focus_relative
 awful.screen.focus_relative = function(...)
     old_f_rel(...)
 
-    awesome.emit_signal("screen_focus_changed")
+    _G.awesome.emit_signal("screen_focus_changed")
 end
 
 -- Awesome keybindings
 -- {{{ Key bindings
 keys.globalkeys = gears.table.join(
     awful.key({modkey}, "`", function ()
-        awful.titlebar.toggle(client.focus)
+        awful.titlebar.toggle(_G.client.focus)
     end, { description = "Toggle title bar", group = "AwesomeWM" }),
     awful.key({modkey}, "c", function ()
             modules.sidebar.toggle()
@@ -58,10 +58,10 @@ keys.globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
-    awful.key({ modkey,           }, "v", function () awful.spawn('xprop WM_CLASS') end,
-              {description = "get window class", group = "awesome"}),
+    -- awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+    --           {description = "show main menu", group = "awesome"}),
+    -- awful.key({ modkey,           }, "v", function () awful.spawn('xprop WM_CLASS') end,
+    --           {description = "get window class", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
@@ -245,9 +245,9 @@ for i = 1, tags do
     )
 end
 
-root.keys(keys.globalkeys)
+_G.root.keys(keys.globalkeys)
 
-root.buttons(gears.table.join(
+_G.root.buttons(gears.table.join(
                  awful.button({  }, 3, function() mainmenu:toggle() end)
 ))
 
