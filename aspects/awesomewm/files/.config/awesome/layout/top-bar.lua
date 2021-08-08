@@ -98,17 +98,18 @@ local top_bar = function (s, offset)
         wibox.widget{
             create_icon('', beautiful.accent.hue_400),
             clock_widget,
-            -- Layout
-            -- wibox.widget {
-            --     wibox.widget{
-            --         wibox.container.margin(s.layoutbox, dpi(4), dpi(4), dpi(0), dpi(0)),
-            --         fg = beautiful.primary.hue_100,
-            --         bg = beautiful.accent.hue_200,
-            --         widget = wibox.container.background
-            --     },
-            --     forced_width = dpi(32),
-            --     layout = wibox.layout.fixed.horizontal
-            -- },
+            -- Layout,
+            wibox.widget {
+                wibox.widget{
+                    wibox.container.margin(s.layoutbox, dpi(8), dpi(4), dpi(0), dpi(0)),
+                    fg = beautiful.accent.hue_200,
+                    bg = beautiful.accent.hue_200 .. '00',
+                    forced_width = 32,
+                    widget = wibox.container.background
+                },
+                forced_width = dpi(32),
+                layout = wibox.layout.fixed.horizontal
+            },
             layout = wibox.layout.fixed.horizontal
         },
         spacing = dpi(20),
