@@ -82,3 +82,24 @@
 [submodule "aspects/awesomewm/files/.config/awesome/lain"]
 	path = aspects/awesomewm/files/.config/awesome/lain
 	url = https://github.com/lcpz/lain.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/nvim-lspconfig"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/nvim-treesitter"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/completion-nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/completion-nvim
+	url = https://github.com/nvim-lua/completion-nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/lspsaga.nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/lspsaga.nvim
+	url = https://github.com/glepnir/lspsaga.nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/telescope.nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/lualine.nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/lualine.nvim
+	url = https://github.com/hoob3rt/lualine.nvim.git
+[submodule "aspects/nvim/files/"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim.git
