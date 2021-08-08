@@ -98,16 +98,15 @@ local top_bar = function (s, offset)
         wibox.widget{
             create_icon('', beautiful.accent.hue_400),
             clock_widget,
-            -- Layout,
             wibox.widget {
                 wibox.widget{
-                    wibox.container.margin(s.layoutbox, dpi(8), dpi(4), dpi(0), dpi(0)),
+                    wibox.container.margin(s.layoutbox, dpi(8), dpi(0), dpi(0), dpi(0)),
                     fg = beautiful.accent.hue_200,
                     bg = beautiful.accent.hue_200 .. '00',
-                    forced_width = 32,
+                    forced_width = 26,
                     widget = wibox.container.background
                 },
-                forced_width = dpi(32),
+                forced_width = dpi(26),
                 layout = wibox.layout.fixed.horizontal
             },
             layout = wibox.layout.fixed.horizontal
@@ -116,15 +115,16 @@ local top_bar = function (s, offset)
         layout = wibox.layout.fixed.horizontal
     }
 
-    local pwidth = s.geometry.width - 200
+    local panel_margin = 18
+    local pwidth = s.geometry.width - panel_margin
 
     local panel = wibox({
         ontop   = false,
         screen  = s,
         type    = 'dock',
         height  = dpi(32),
-        width   = s.geometry.width - 200,
-        x       = (s.geometry.x) + 100,
+        width   = pwidth,
+        x       = (s.geometry.x) + (panel_margin / 2),
         y       = s.geometry.y,
         stretch = false,
         bg      = beautiful.primary.hue_100 .. '00',
