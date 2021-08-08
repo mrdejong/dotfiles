@@ -47,7 +47,7 @@ awful.layout.layouts = {awful.layout.suit.tile, awful.layout.suit.max, awful.lay
 
 awful.screen.connect_for_each_screen(function(s)
     for i, tag in pairs(tags[s.index]) do
-        awful.tag.add(tag.text, {
+        awful.tag.add(tag.icon or tag.text, {
             -- icon = tag.icon or nil,
             -- icon_only = false,
             layout = awful.layout.suit.tile,

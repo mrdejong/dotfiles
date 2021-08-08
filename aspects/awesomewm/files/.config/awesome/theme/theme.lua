@@ -26,16 +26,17 @@ local awesome_overrides = function (theme)
 
     theme.taglist_font        = theme.font
     theme.taglist_bg_empty    = theme.primary.hue_100 .. '00'
+    theme.taglist_fg_empty    = "#FFFFFF" .. '66'
     theme.taglist_bg_occupied = theme.primary.hue_200 .. '00'
-    theme.taglist_fg_occupied = theme.accent.hue_100
+    theme.taglist_fg_occupied = "#e8e8e8" .. 'F2'
     theme.taglist_bg_urgent   = 'linear:0,0:0,' .. dpi(48) .. ':0,' ..
         theme.accent.hue_700 .. ':0.07,' ..
         theme.accent.hue_700 .. ':0.07,' ..
         theme.primary.hue_100 .. ':1,' ..
         theme.primary.hue_100
 
-    theme.taglist_bg_focus    = theme.accent.hue_200 --.. '00'
-    theme.taglist_fg_focus    = theme.primary.hue_200
+    theme.taglist_bg_focus    = theme.accent.hue_200 ..  '00'
+    theme.taglist_fg_focus    = theme.accent.hue_200
 
     theme.tasklist_font      = theme.font
     theme.tasklist_bg_normal = theme.primary.hue_100 .. '00'

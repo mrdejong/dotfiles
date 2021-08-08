@@ -55,11 +55,6 @@ local function list_update(w, buttons, label, data, objects)
             l = wibox.layout.fixed.horizontal()
             bg_clickable = clickable_container()
 
-            ib.font = "Hack Nerd Font 14" --beautiful.icon_font
-            ib.forced_width = dpi(22)
-            ib.forced_height = dpi(22)
-            ib.align = 'center'
-            ib.valign = 'center'
 
             -- ibm.shape = utils.rrect(dpi(5))
 
@@ -104,8 +99,17 @@ local function list_update(w, buttons, label, data, objects)
         -- end
         -- bgb:set_bgimage(bg_image)
         if tag_data.icon then
-            tbm.visible = false
-            ib:set_text(tag_data.icon)
+            -- tbm.visible = false
+            tbm:set_margins(0)
+            tbm.left = dpi(-8)
+            tbm.right = dpi(8)
+            -- tb:set_text(tag_data.icon)
+
+            tb.font = "Hack Nerd Font 14" --beautiful.icon_font
+            tb.forced_width = dpi(23)
+            -- tb.forced_height = dpi(22)
+            tb.align = 'center'
+            tb.valign = 'center'
         else
             ibm.visible = false
         end
