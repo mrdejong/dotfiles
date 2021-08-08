@@ -39,6 +39,11 @@
         :desc "Open ranger"
         "f r" #'ranger))
 
+(after! neotree
+  (map! :leader
+        :desc "Open neotree"
+        "f n" #'+neotree/open))
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
@@ -103,8 +108,6 @@
         company-minimum-prefix-length 2)
   (setq company-show-numbers t)
   (add-hook 'evil-normal-state-entry-hook #'company-abort))
-
-()
 
 ;; exwm config
 ;; (require 'exwm)
