@@ -2,15 +2,7 @@ require('awful.autofocus')
 local gears     = require('gears')
 local awful     = require('awful')
 local naughty   = require('naughty')
-local dpi       = require('beautiful').xresources.apply_dpi
 local beautiful = require('beautiful')
-
-local function dbug(msg)
-    naughty.notify({ preset = naughty.config.presets.critical,
-                     title = "Debug",
-                     message = msg
-    })
-end
 
 require('module.notifications')
 

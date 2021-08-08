@@ -1,51 +1,46 @@
-local awful = require('awful')
+local awful     = require('awful')
 local beautiful = require('beautiful')
-local gears = require('gears')
-local apps = require('configuration.apps')
-local dpi = require('beautiful').xresources.apply_dpi
-
-local screens = {
-    primary = 1,
-    secondary = 2,
-    all = -1
-}
 
 local tags = {
     {
         {
             text = 'web',
             icon = '爵'
-        },
+        }, -- 1
         {
             text = 'Editor',
             icon = ''
-        },
+        }, -- 2
         {
             text = 'Terminal',
             icon = ''
-        },
+        }, -- 3
         {
             text = 'Files',
             icon = ''
-        },
+        }, -- 4
         {
             text = 'Discord',
             icon = 'ﭮ'
-        },
+        }, -- 5
+        {
+            text = 'Minecraft',
+            icon = ''
+        }, -- 6
         {
             text = 'misc',
-        }
-    },
+        } -- 7
+    }, -- Screen 1
     {
         {
             trext = 'Spotify',
             icon = '阮'
-        },
+        }, -- 1
         {
             text = 'YouTube',
             icon = ''
-        }
-    }
+        } -- 2
+    } -- Screen 2
 }
 
 awful.layout.layouts = {awful.layout.suit.tile, awful.layout.suit.max, awful.layout.suit.floating}
@@ -59,7 +54,7 @@ awful.screen.connect_for_each_screen(function(s)
             gap = beautiful.gaps,
             screen = s,
             -- defaultApp = tag.defaultApp,
-            selected = i == 1,
+            selected =  i == 1,
             font_icon = tag.icon or nil
         })
     end
