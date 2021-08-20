@@ -4,6 +4,16 @@ local beautiful = require('beautiful')
 local tags = {
     {
         {
+            trext = 'Spotify',
+            icon = '阮'
+        }, -- 1
+        {
+            text = 'YouTube',
+            icon = ''
+        } -- 2
+    }, -- Screen 2
+    {
+        {
             text = 'web',
             icon = '爵'
         }, -- 1
@@ -30,20 +40,22 @@ local tags = {
         {
             text = 'misc',
         } -- 7
-    }, -- Screen 1
-    {
-        {
-            trext = 'Spotify',
-            icon = '阮'
-        }, -- 1
-        {
-            text = 'YouTube',
-            icon = ''
-        } -- 2
-    } -- Screen 2
+    } -- Screen 1
 }
 
 awful.layout.layouts = {awful.layout.suit.tile, awful.layout.suit.max, awful.layout.suit.floating}
+
+local function reverse(tbl)
+  for i=1, math.floor(#tbl / 2) do
+    local tmp = tbl[i]
+    tbl[i] = tbl[#tbl - i + 1]
+    tbl[#tbl - i + 1] = tmp
+  end
+end
+
+-- if awful.screen.count() == 1 then
+--     tags = reverse(tags)
+-- end
 
 awful.screen.connect_for_each_screen(function(s)
     for i, tag in pairs(tags[s.index]) do

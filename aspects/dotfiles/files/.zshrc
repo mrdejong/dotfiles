@@ -175,6 +175,10 @@ bindkey '^Z' fg-bg
 
 source $HOME/.zsh/aliases
 
+sub() {
+	git submodule add "https://github.com/$1.git"
+}
+
 
 #
 # Theme
@@ -191,3 +195,6 @@ alias vim='nvim'
 source $HOME/.cargo/env
 export PATH="~/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.symfony/bin:$PATH"
+export PATH="$HOME/lsp/scry/bin:$PATH"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"

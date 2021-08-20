@@ -51,7 +51,6 @@
 
 (package! key-chord)
 (package! key-seq)
-
 (package! ranger)
 
 ;; EXWM

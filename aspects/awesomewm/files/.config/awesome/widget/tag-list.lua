@@ -34,6 +34,14 @@ local function create_buttons(buttons, object)
     end
 end
 
+local function reverse(tbl)
+  for i=1, math.floor(#tbl / 2) do
+    local tmp = tbl[i]
+    tbl[i] = tbl[#tbl - i + 1]
+    tbl[#tbl - i + 1] = tmp
+  end
+end
+
 local function list_update(w, buttons, label, data, objects)
     -- update the widgets, creating them if needed
     w:reset()
@@ -54,7 +62,6 @@ local function list_update(w, buttons, label, data, objects)
             ibm = wibox.container.margin(ib, dpi(6), dpi(9), dpi(6), dpi(6))
             l = wibox.layout.fixed.horizontal()
             bg_clickable = clickable_container()
-
 
             -- ibm.shape = utils.rrect(dpi(5))
 
@@ -78,8 +85,12 @@ local function list_update(w, buttons, label, data, objects)
             }
         end
 
-
         local tag_data = _G.tags[o.screen.index][o.index]
+
+        -- if awful.screen.count()  == 1 then
+        --     tag_data = reverse(_G.tags)[o.screen.index][o.index]
+        -- else
+        -- end
 
         -- _G.awesome.emit_signal('debug::error', o.screen.index)
 

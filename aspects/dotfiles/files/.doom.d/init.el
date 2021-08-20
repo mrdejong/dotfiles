@@ -115,7 +115,9 @@
        ;;clojure           ; java with a lisp
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
-       ;;crystal           ; ruby at the speed of c
+       (crystal           ; ruby at the speed of c
+        +lsp
+        +checkers)
        ;;csharp            ; unity, .NET, and mono shenanigans
        ;;data              ; config/data formats
        ;;(dart +flutter)   ; paint ui and not much else
@@ -141,7 +143,9 @@
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
        (javascript          ; all(hope(abandon(ye(who(enter(here))))))
         +lsp)
-       ;;julia             ; a better, faster MATLAB
+       (julia             ; a better, faster MATLAB
+        +lsp)
+
        ;;kotlin            ; a better, slicker Java(Script)
        ;;latex             ; writing papers in Emacs has never been so fun
        ;;lean

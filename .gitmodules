@@ -103,3 +103,57 @@
 [submodule "aspects/nvim/files/"]
 	path = aspects/nvim/files/.config/nvim/pack/bundle/start/telescope.nvim
 	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-closetag"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-closetag
+	url = https://github.com/alvan/vim-closetag.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/nvim-compe"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/nvim-compe
+	url = https://github.com/hrsh7th/nvim-compe.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-vsnip"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/auto-pairs"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/nvim-web-devicons"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/nvim-web-devicons
+	url = https://github.com/kyazdani42/nvim-web-devicons.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/gitsigns.nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/formatter.nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/formatter.nvim
+	url = https://github.com/mhartington/formatter.nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/plenary.nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/popup.nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/popup.nvim
+	url = https://github.com/nvim-lua/popup.nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/lspkind-nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/lspkind-nvim
+	url = https://github.com/onsails/lspkind-nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/auto-session"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/auto-session
+	url = https://github.com/rmagatti/auto-session.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/everforest"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/everforest
+	url = https://github.com/sainnhe/everforest.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-repeat"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/targets.vim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/targets.vim
+	url = https://github.com/wellle/targets.vim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/minimap.vim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/minimap.vim
+	url = https://github.com/wfxr/minimap.vim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/cmd-parser.nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/cmd-parser.nvim
+	url = https://github.com/winston0410/cmd-parser.nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/range-highlight.nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/range-highlight.nvim
+	url = https://github.com/winston0410/range-highlight.nvim.git
+[submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/surround.nvim"]
+	path = aspects/nvim/files/.config/nvim/pack/bundle/start/surround.nvim
+	url = https://github.com/blackCauldron7/surround.nvim.git

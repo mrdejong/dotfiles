@@ -16,15 +16,6 @@ _G.mapper.imap('j,', '<Esc>$a,<Esc>')
 _G.mapper.imap('jo', '<Esc>o')
 _G.mapper.imap('jO', '<Esc>O')
 
-cmd([[
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-let g:completion_confirm_key = ""
-imap <expr> <cr>  pumvisible() ? complete_info()["selected"] != "-1" ?
-                 \ "\<Plug>(completion_confirm_completion)"  : "\<c-e>\<CR>" :  "\<CR>"
-]])
-
 _G.mapper.lmap('w', ':w<cr>')
 
 -- filetype indent plugin on
@@ -66,6 +57,30 @@ opt.tabstop = 4 -- Number of spaces tabs count for
 opt.termguicolors = true -- You will have bad experience for diagnostic messages when it's default 4000.
 opt.updatetime = 250 -- don't give |ins-completion-menu| messages.
 opt.wrap = true
+
+require("range-highlight").setup({})
+require("surround").setup({})
+
+require("lspkind").init({})
+require("gitsigns").setup({
+	numhl = true,
+	signcolumn = false
+})
+
+local sessionopts = {
+	log_level = "info",
+	auto_session_enable_last_session = false,
+	auto_session_root_dir = vim.fn.stdpath("data") .. "/sessions/",
+	auto_session_enabled = true,
+	auto_save_enabled = true,
+	auto_restore_enabled = true,
+	auto_session_suppress_dirs = nil
+}
+
+require("auto-session").setup(sessionopts)
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local nvim_lsp = require('lspconfig')
 
