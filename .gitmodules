@@ -76,12 +76,6 @@
 [submodule "aspects/dotfiles/files/.tmux/plugins/tmux-yank"]
 	path = aspects/dotfiles/files/.tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
-[submodule "aspects/awesomewm/files/.config/awesome/bling"]
-	path = aspects/awesomewm/files/.config/awesome/bling
-	url = https://github.com/BlingCorp/bling.git
-[submodule "aspects/awesomewm/files/.config/awesome/lain"]
-	path = aspects/awesomewm/files/.config/awesome/lain
-	url = https://github.com/lcpz/lain.git
 [submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/nvim-lspconfig"]
 	path = aspects/nvim/files/.config/nvim/pack/bundle/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
@@ -100,9 +94,6 @@
 [submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/lualine.nvim"]
 	path = aspects/nvim/files/.config/nvim/pack/bundle/start/lualine.nvim
 	url = https://github.com/hoob3rt/lualine.nvim.git
-[submodule "aspects/nvim/files/"]
-	path = aspects/nvim/files/.config/nvim/pack/bundle/start/telescope.nvim
-	url = https://github.com/nvim-telescope/telescope.nvim.git
 [submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/vim-closetag"]
 	path = aspects/nvim/files/.config/nvim/pack/bundle/start/vim-closetag
 	url = https://github.com/alvan/vim-closetag.git
