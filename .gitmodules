@@ -148,3 +148,6 @@
 [submodule "aspects/nvim/files/.config/nvim/pack/bundle/start/surround.nvim"]
 	path = aspects/nvim/files/.config/nvim/pack/bundle/start/surround.nvim
 	url = https://github.com/blackCauldron7/surround.nvim.git
+[submodule "aspects/awesomewm/files/.config/awesome/lain"]
+	path = aspects/awesomewm/files/.config/awesome/lain
+	url = https://github.com/lcpz/lain.git
