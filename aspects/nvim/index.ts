@@ -5,7 +5,7 @@ import {
     file,
     path,
     prompt,
-    resource,
+    // resource,
     skip,
     task,
     variable,
@@ -64,13 +64,13 @@ task('Link files', async () => {
     }
 });
 
-const FZF_BASE = "pack/bundle/start/fzf";
+// const FZF_BASE = "pack/bundle/start/fzf";
 
-task('Install fzf', async () => {
-    const base = resource.file('.config/nvim').join(FZF_BASE);
+// task('Install fzf', async () => {
+//     const base = resource.file('.config/nvim').join(FZF_BASE);
 
-    await command('./install', ['--all'], {
-        chdir: base,
-        creates: '~/.fzf'
-    });
-});
+//     await command('./install', [], {
+//         chdir: base,
+//         creates: '~/.fzf'
+//     });
+// });
