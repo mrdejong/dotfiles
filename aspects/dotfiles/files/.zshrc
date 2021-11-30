@@ -192,9 +192,10 @@ BASE16_SHELL="$HOME/.zsh/base16-shell/"
 
 alias vim='nvim'
 
-source $HOME/.cargo/env
+# source $HOME/.cargo/env
 export PATH="~/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.symfony/bin:$PATH"
 export PATH="$HOME/lsp/scry/bin:$PATH"
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+# export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
+. /opt/asdf-vm/asdf.sh

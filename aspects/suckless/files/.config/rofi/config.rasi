@@ -2,5 +2,5 @@ configuration {
 	theme: "~/.config/rofi/themes/Quiet.rasi";
 	show-icons: true;
 	terminal: "/usr/bin/alacritty";
-	modi: "window,drun,run,keys,file-browser";
+	modi: "window,drun,run,keys";
 }

@@ -21,7 +21,7 @@
     },
     "profiles": {
         "personal": {
-            "pattern": "/\\bdutchcaffeine\\b/i",
+            "pattern": "/\\bmanjaro-alexander\\b/i",
             "variables": { }
         },
         "work": {
