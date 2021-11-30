@@ -149,44 +149,42 @@ local close_client = function(c) c:kill() end
 local swap_client = function(c) c:swap(awful.client.getmaster()) end
 local move_to_screen = function(c) c:move_to_screen() end
 local ontop = function (c) c.ontop = not c.ontop end
+local fullscreen = function (c)
+  c.fullscreen = not c.fullscreen
+  c:raise()
+end
+local toggle_maximize = function(c)
+  c.maximized = not c.maximized
+  c:raise()
+end
+local toggle_maximize_vertical = function(c)
+  c.maximized_vertical = not c.maximized_vertical
+  c:raise()
+end
+local toggle_maximize_horizontal = function(c)
+  c.maximized_horizontal = not c.maximized_horizontal
+  c:raise()
+end
+
+-- Keep this around if I ever want this back...
+-- awful.key({ modkey,           }, "n",
+--   function (c)
+--     -- The client currently has the input focus, so it cannot be
+--     -- minimized, since minimized clients can't have the focus.
+--     c.minimized = true
+--   end ,
+--   {description = "minimize", group = "client"}),
 
 clientkeys = gears.table.join(
-    awful.key({ modkey,           }, "f",
-        function (c)
-            c.fullscreen = not c.fullscreen
-            c:raise()
-        end,
-        {description = "toggle fullscreen", group = "client"}),
+    bind_client("f", fullscreen, "Toggle fullscreen"),
     bind_client("c", close_client, "Close"),
     bind_client("space", awful.client.floating.toggle, "Toggle floating", "Control"),
     bind_client("Return", swap_client, "Move to master", "Control"),
     bind_client("o", move_to_screen, "Move to screen"),
     bind_client("t", ontop, "Toggle keep on top"),
-    awful.key({ modkey,           }, "n",
-        function (c)
-            -- The client currently has the input focus, so it cannot be
-            -- minimized, since minimized clients can't have the focus.
-            c.minimized = true
-        end ,
-        {description = "minimize", group = "client"}),
-    awful.key({ modkey,           }, "m",
-        function (c)
-            c.maximized = not c.maximized
-            c:raise()
-        end ,
-        {description = "(un)maximize", group = "client"}),
-    awful.key({ modkey, "Control" }, "m",
-        function (c)
-            c.maximized_vertical = not c.maximized_vertical
-            c:raise()
-        end ,
-        {description = "(un)maximize vertically", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "m",
-        function (c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c:raise()
-        end ,
-        {description = "(un)maximize horizontally", group = "client"})
+    bind_client("m", toggle_maximize, "(un)maximize"),
+    bind_client("m", toggle_maximize_vertical, "(un)maximize vertically", "Control"),
+    bind_client("m", toggle_maximize_horizontal, "(un)maximize horizontally", "Shift")
 )
 
 -- Bind all key numbers to tags.
