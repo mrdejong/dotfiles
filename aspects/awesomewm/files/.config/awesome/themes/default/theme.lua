@@ -13,7 +13,7 @@ local dpi          = xresources.apply_dpi
 local gfs              = require("gears.filesystem")
 --    local themes_path = gfs.get_themes_dir()
 local themes_path       = gfs.get_configuration_dir() .. "themes/"
-local wallpaper_folder  = "~/.wallpapers/"
+local wallpaper_folder  = "~/.wallpaper/"
 local my_table          = awful.util.table or gears.table
 
 local theme = {}
