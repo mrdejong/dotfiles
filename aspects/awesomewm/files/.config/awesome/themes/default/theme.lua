@@ -83,6 +83,8 @@ local taglist_square_size = dpi(4)
 -- theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 --     taglist_square_size, theme.fg_normal
 -- )
+theme.taglist_font = "Hack Nerd Font Mono 16"
+theme.taglist_width = dpi(32)
 
 -- Variables set for theming notifications:
 -- notification_font
