@@ -40,16 +40,16 @@ theme.widget_mail          = theme.dir .. "icons/mail.png"
 theme.widget_mail_on       = theme.dir .. "icons/mail_on.png"
 
 -- theme.bg_normal     = "#222222"
-theme.bg_normal = "#151b1e"
-theme.bg_focus      = "#151b1e"
-theme.bg_urgent     = "#151b1e"
-theme.bg_minimize   = "#c8cca7"
-theme.bg_systray    = theme.bg_normal
+theme.bg_normal   = "#151B1EE6"
+theme.bg_focus    = "#151B1EE6"
+theme.bg_urgent   = "#151B1E"
+theme.bg_minimize = "#c8cca7"
+theme.bg_systray  = theme.bg_normal
 
-theme.fg_normal     = "#DDDDFF"
-theme.fg_focus      = "#EA6f81"
-theme.fg_urgent     = "#CC9393"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal   = "#DDDDFF"
+theme.fg_focus    = "#EA6f81"
+theme.fg_urgent   = "#CC9393"
+theme.fg_minimize = "#ffffff"
 
 theme.useless_gap   = dpi(2)
 theme.border_width  = dpi(2)
@@ -57,9 +57,10 @@ theme.border_normal = "#3F3F3F"
 theme.border_focus  = "#CC9393"
 theme.border_marked = "#CC9393"
 
-theme.tasklist_bg_focus = "#151b1e"
+theme.tasklist_bg_normal       = "#151b1e00"
+theme.tasklist_bg_focus        = "#151b1e00"
 theme.tasklist_plain_task_name = true
-theme.tasklist_disable_icon = true
+theme.tasklist_disable_icon    = true
 
 -- There are other variable sets
 -- overriding the default one when
